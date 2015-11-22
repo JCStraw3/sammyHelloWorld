@@ -4,7 +4,8 @@
 
 	app.get('#/', function(context){
 		context.render('/view/main.template', {
-			'myVariable': 'A different value'
+			'myVariable': 'A header',
+			'newVariable': 'new',
 		}, function(view){
 			$('#container').append(view);
 		});
