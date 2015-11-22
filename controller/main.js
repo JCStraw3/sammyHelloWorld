@@ -3,7 +3,11 @@
 	var app = Sammy.apps.body;
 
 	app.get('#/', function(context){
-		alert("You are in the main route.");
+		context.render('/view/main.template', {
+			'myVariable': 'A different value'
+		}, function(view){
+			$('#container').append(view);
+		});
 	});
 
 })();
