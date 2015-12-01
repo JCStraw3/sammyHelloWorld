@@ -12,14 +12,18 @@
 			this.use(Sammy.Template);
 			this.get('#/', function(context){
 				context.render('/view/main.template', {
-					'myVariable': 'A header',
+					'myVariable': 'Header',
 					'newVariable': 'new',
 				}, function(view){
-					$('#container').append(view);
+					$('#container').html(view);
 				});
 			});
 			this.get('#/page', function(context){
-				console.log('test');
+				context.render('/view/page.template', {
+					'myVariable': 'Header2',
+				}, function(view){
+					$('#container').html(view);
+				});
 			});
 		});
 		app.run('#/');
