@@ -10,6 +10,7 @@
 	$(document).ready(function(){
 		var app = Sammy('#container', function(){
 			this.use(Sammy.Template);
+
 			this.get('#/', function(context){
 				context.render('/view/main.template', {
 					'myVariable': 'Header',
@@ -18,6 +19,7 @@
 					$('#container').html(view);
 				});
 			});
+
 			this.get('#/page', function(context){
 				context.render('/view/page.template', {
 					'myVariable': 'Header2',
@@ -25,6 +27,7 @@
 					$('#container').html(view);
 				});
 			});
+
 		});
 		app.run('#/');
 	});
