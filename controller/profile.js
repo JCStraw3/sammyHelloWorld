@@ -3,12 +3,13 @@
 	var app = Sammy.apps.body;
 
 	app.get('#/profile', function(context){
+
 		context.render('/view/header.template', {
 			'header': 'Header',
 		}, function(view){
 			$('#header').html(view);
 		});
-		
+
 		context.render('/view/profile.template', {
 			'userName': 'Jessica',
 			'email': 'test@test.com',
@@ -17,6 +18,7 @@
 		}, function(view){
 			$('#body').html(view);
 		});
+		
 	});
 
 })();
